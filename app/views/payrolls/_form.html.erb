@@ -1,0 +1,55 @@
+<%= form_for(@payroll) do |f| %>
+  <% if @payroll.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payroll.errors.count, "error") %> prohibited this payroll from being saved:</h2>
+
+      <ul>
+      <% @payroll.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :payDate %><br>
+    <%= f.date_select :payDate %>
+  </div>
+  <div class="field">
+    <%= f.label :hourlyRate %><br>
+    <%= f.text_field :hourlyRate %>
+  </div>
+  <div class="field">
+    <%= f.label :normalHours %><br>
+    <%= f.number_field :normalHours %>
+  </div>
+  <div class="field">
+    <%= f.label :allowances %><br>
+    <%= f.text_field :allowances %>
+  </div>
+  <div class="field">
+    <%= f.label :deductions %><br>
+    <%= f.text_field :deductions %>
+  </div>
+  <div class="field">
+    <%= f.label :netPay %><br>
+    <%= f.text_field :netPay %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_id %><br>
+    <%= f.number_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.collection_select :department_id, Department.all, :id, :departmentName, :prompt => " " %>
+  </div>
+  <div class="field">
+    <%= f.collection_select :employee_type_id, EmployeeType.all, :id, :typeName, :prompt => " " %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

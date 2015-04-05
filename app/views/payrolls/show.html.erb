@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paydate:</strong>
+  <%= @payroll.payDate %>
+</p>
+
+<p>
+  <strong>Hourlyrate:</strong>
+  <%= @payroll.hourlyRate %>
+</p>
+
+<p>
+  <strong>Normalhours:</strong>
+  <%= @payroll.normalHours %>
+</p>
+
+<p>
+  <strong>Allowances:</strong>
+  <%= @payroll.allowances %>
+</p>
+
+<p>
+  <strong>Deductions:</strong>
+  <%= @payroll.deductions %>
+</p>
+
+<p>
+  <strong>Netpay:</strong>
+  <%= @payroll.netPay %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @payroll.status %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @payroll.employee_id %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @payroll.department_id %>
+</p>
+
+<p>
+  <strong>Employee type:</strong>
+  <%= @payroll.employee_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_payroll_path(@payroll) %> |
+<%= link_to 'Back', payrolls_path %>
