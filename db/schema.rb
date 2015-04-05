@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405050203) do
+ActiveRecord::Schema.define(version: 20150405185919) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "departmentCode"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150405050203) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string   "employeeID"
+    t.integer  "employeeID"
     t.string   "FirstName"
     t.string   "LastName"
     t.string   "Address"
@@ -41,9 +41,6 @@ ActiveRecord::Schema.define(version: 20150405050203) do
   end
 
   create_table "payrolls", force: :cascade do |t|
-    t.integer  "employeeID_id"
-    t.integer  "departmentCode_id"
-    t.integer  "employeeCode_id"
     t.date     "payDate"
     t.decimal  "hourlyRate"
     t.integer  "normalHours"
@@ -51,12 +48,11 @@ ActiveRecord::Schema.define(version: 20150405050203) do
     t.decimal  "deductions"
     t.decimal  "netPay"
     t.string   "status"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "employee_id"
+    t.integer  "department_id"
+    t.integer  "employee_type_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
-
-  add_index "payrolls", ["departmentCode_id"], name: "index_payrolls_on_departmentCode_id"
-  add_index "payrolls", ["employeeCode_id"], name: "index_payrolls_on_employeeCode_id"
-  add_index "payrolls", ["employeeID_id"], name: "index_payrolls_on_employeeID_id"
 
 end
