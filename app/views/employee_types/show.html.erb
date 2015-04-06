@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% title("Show Employees") %>
+<div class="body">
+	<p id="notice"><%= notice %></p>
 <p>
   <strong>Typecode:</strong>
   <%= @employee_type.typeCode %>
@@ -12,3 +13,4 @@
 
 <%= link_to 'Edit', edit_employee_type_path(@employee_type) %> |
 <%= link_to 'Back', employee_types_path %>
+</div>
