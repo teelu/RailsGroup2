@@ -36,18 +36,23 @@
 </p>
 
 <p>
-  <strong>Employee:</strong>
-  <%= @payroll.employee_id %>
+  <strong>Employee ID:</strong>
+  <%= @payroll.employee_id %> 
 </p>
 
 <p>
+  <strong>Employee Name:</strong>
+  <%= @payroll.employee.FirstName %> <%= @payroll.employee.LastName %>
+  </p>
+
+<p>
   <strong>Department:</strong>
-  <%= @payroll.department_id %>
+  <%= @payroll.department.departmentName%>
 </p>
 
 <p>
   <strong>Employee type:</strong>
-  <%= @payroll.employee_type_id %>
+  <%= @payroll.employee_type.typeName %>
 </p>
 
 <%= link_to 'Edit', edit_payroll_path(@payroll) %> |

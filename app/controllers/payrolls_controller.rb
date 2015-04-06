@@ -5,11 +5,13 @@ class PayrollsController < ApplicationController
   # GET /payrolls.json
   def index
     @payrolls = Payroll.all
+    @departments = Department.all
   end
 
   # GET /payrolls/1
   # GET /payrolls/1.json
   def show
+   
   end
 
   # GET /payrolls/new
@@ -17,13 +19,14 @@ class PayrollsController < ApplicationController
     @payroll = Payroll.new
     @departments = Department.all
     @employee_types = EmployeeType.all
+    @employees = Employee.all
   end
 
   # GET /payrolls/1/edit
   def edit
-    @payroll = Payroll.find(params[:employee_id])
     @departments = Department.all
     @employee_types = EmployeeType.all
+    @employees = Employee.all
   end
 
   # POST /payrolls

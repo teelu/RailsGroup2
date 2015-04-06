@@ -30,8 +30,8 @@
         <td><%= payroll.netPay %></td>
         <td><%= payroll.status %></td>
         <td><%= payroll.employee_id %></td>
-        <td><%= payroll.department_id %></td>
-        <td><%= payroll.employee_type_id %></td>
+        <td><%= payroll.department.departmentCode %></td>
+        <td><%= payroll.employee_type.typeCode %></td>
         <td><%= link_to 'Show', payroll %></td>
         <td><%= link_to 'Edit', edit_payroll_path(payroll) %></td>
         <td><%= link_to 'Destroy', payroll, method: :delete, data: { confirm: 'Are you sure?' } %></td>

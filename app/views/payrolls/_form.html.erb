@@ -37,17 +37,18 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select :status, options_for_select([['Active','Active'],['Suspended','Suspended'],['Other','Other']], :selected => params[:status]), {} %>
   </div>
   <div class="field">
     <%= f.label :employee_id %><br>
     <%= f.number_field :employee_id %>
   </div>
   <div class="field">
-    <%= f.collection_select :department_id, Department.all, :id, :departmentName, :prompt => " " %>
+    <%= f.label :department_id %><br>
+    <%= f.collection_select :department_id, Department.all, :id, :departmentName %>
   </div>
   <div class="field">
-    <%= f.collection_select :employee_type_id, EmployeeType.all, :id, :typeName, :prompt => " " %>
+    <%= f.collection_select :employee_type_id, EmployeeType.all, :id, :typeName %>
   </div>
   <div class="actions">
     <%= f.submit %>
