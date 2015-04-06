@@ -9,5 +9,6 @@ class Payroll < ActiveRecord::Base
 	validates_numericality_of :allowances, less_than: 9999.99
 	validates_numericality_of :deductions, less_than: 9999.99
 	validates_numericality_of :netPay, less_than: 99999.99
+
 end
 

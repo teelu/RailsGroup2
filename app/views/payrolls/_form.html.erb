@@ -10,46 +10,47 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :payDate %><br>
-    <%= f.date_select :payDate %>
+    Employee ID<br>
+    <%= f.collection_select :employee_id, Employee.all, :id, :employeeID %>
   </div>
-  <div class="field">
-    <%= f.label :hourlyRate %><br>
-    <%= f.text_field :hourlyRate %>
-  </div>
-  <div class="field">
-    <%= f.label :normalHours %><br>
-    <%= f.number_field :normalHours %>
-  </div>
-  <div class="field">
-    <%= f.label :allowances %><br>
-    <%= f.text_field :allowances %>
-  </div>
-  <div class="field">
-    <%= f.label :deductions %><br>
-    <%= f.text_field :deductions %>
-  </div>
-  <div class="field">
-    <%= f.label :netPay %><br>
-    <%= f.text_field :netPay %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.select :status, options_for_select([['Active','Active'],['Suspended','Suspended'],['Other','Other']], :selected => params[:status]), {} %>
-  </div>
-  <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
-  </div>
-  <div class="field">
-    <%= f.label :department_id %><br>
+    <div class="field">
+    Department<br>
     <%= f.collection_select :department_id, Department.all, :id, :departmentName %>
   </div>
   <div class="field">
+    Employee Type<br>
     <%= f.collection_select :employee_type_id, EmployeeType.all, :id, :typeName %>
   </div>
+  <div class="field">
+    Pay Date<br>
+    <%= f.date_select :payDate %>
+  </div>
+  <div class="field">
+    Hourly Rate<br>
+    $<%= f.text_field :hourlyRate %>
+  </div>
+  <div class="field">
+    Hours<br>
+    <%= f.number_field :normalHours %>
+  </div>
+  <div class="field">
+    Allowances<br>
+    <%= f.text_field :allowances %>
+  </div>
+  <div class="field">
+    Deductions<br>
+    <%= f.text_field :deductions %>
+  </div>
+  <div class="field">
+    Net Pay<br>
+    <%= f.number_field :netPay %>
+  </div>
+  <div class="field">
+    Status<br>
+    <%= f.select :status, options_for_select([['Active','Active'],['Suspended','Suspended'],['Other','Other']], :selected => params[:status]), {} %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

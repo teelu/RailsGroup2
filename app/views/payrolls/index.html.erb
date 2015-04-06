@@ -5,16 +5,16 @@
 <table>
   <thead>
     <tr>
-      <th>Paydate</th>
-      <th>Hourlyrate</th>
-      <th>Normalhours</th>
+      <th>Pay Date</th>
+      <th>Hourly Rate</th>
+      <th>Hours</th>
       <th>Allowances</th>
       <th>Deductions</th>
-      <th>Netpay</th>
+      <th>Net Pay</th>
       <th>Status</th>
-      <th>Employee</th>
+      <th>Employee ID</th>
       <th>Department</th>
-      <th>Employee type</th>
+      <th>Employee Type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,7 +23,7 @@
     <% @payrolls.each do |payroll| %>
       <tr>
         <td><%= payroll.payDate %></td>
-        <td><%= payroll.hourlyRate %></td>
+        <td>$<%= payroll.hourlyRate %></td>
         <td><%= payroll.normalHours %></td>
         <td><%= payroll.allowances %></td>
         <td><%= payroll.deductions %></td>
@@ -41,6 +41,7 @@
 </table>
 
 <br>
+<%= link_to 'Home', root_path %>
 
 <%= link_to 'New Payroll', new_payroll_path %>
 </div>

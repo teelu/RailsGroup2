@@ -6,12 +6,13 @@ class PayrollsController < ApplicationController
   def index
     @payrolls = Payroll.all
     @departments = Department.all
+    @employees = Employee.all
   end
 
   # GET /payrolls/1
   # GET /payrolls/1.json
   def show
-   
+  
   end
 
   # GET /payrolls/new
@@ -32,7 +33,11 @@ class PayrollsController < ApplicationController
   # POST /payrolls
   # POST /payrolls.json
   def create
+    calculatedNetPay = params[:hourlyRate].to_f * params[:normalHours].to_f + params[:allowances].to_f - params[:deductions].to_f
+    payroll_params.merge(:netPay => calculatedNetPay.to_i)
     @payroll = Payroll.new(payroll_params)
+
+   
 
     respond_to do |format|
       if @payroll.save
