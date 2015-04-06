@@ -2,6 +2,7 @@ class Employee < ActiveRecord::Base
 	has_one :payrolls
 
 	validates :employeeID, presence: true
+	validates :employeeID, uniqueness: true
 	validates :FirstName, presence: true
 	validates :FirstName, length: {maximum: 15}
 	validates :LastName, presence: true
