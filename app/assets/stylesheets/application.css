@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+ /* FONTS */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+@import url('http://fonts.googleapis.com/css?family=Oswald');
+
+h1
+{
+	font-family: 'Oswald', 'century gothic';
+	color:navy;
+}
+
+.header {
+	margin:  2% 7.5% 0;
+	border-bottom-style: solid;
+	border-width:0.1em;
+	padding-top: 2%;
+	font-family: 'Oswald', 'century gothic';
+	height: 70px;
+}
+.body{
+	margin:  2% 7.5% 0;
+	padding-top: 2%;
+	font-family: 'Oswald', 'century gothic';
+}
+.header h1 {
+	float: left;
+}
+.header #logo{
+	float: right
+}
