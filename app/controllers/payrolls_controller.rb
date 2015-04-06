@@ -1,4 +1,5 @@
 class PayrollsController < ApplicationController
+   before_filter :set_default_format_to_xml, only: [:index]
   before_action :set_payroll, only: [:show, :edit, :update, :destroy]
 
   # GET /payrolls

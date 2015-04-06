@@ -1,9 +1,11 @@
 class EmployeesController < ApplicationController
+  before_filter :set_default_format_to_xml, only: [:index]
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   # GET /employees
   # GET /employees.json
   def index
+    p params
     @employees = Employee.all
   end
 

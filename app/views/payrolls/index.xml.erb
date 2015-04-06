@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xsl/payrolls.xsl"?>
+<payrolls>
+	<logo src="/assets/images/bentTech.png"/>
+	<% @payrolls.each do |payroll| %>
+        <paydate><%= payroll.payDate %></paydate>
+        <hourlyrate><%= payroll.hourlyRate %></hourlyrate>
+        <normalhours><%= payroll.normalHours %></normalhours>
+        <allowances><%= payroll.allowances %></allowances>
+        <deductions><%= payroll.deductions %></deductions>
+        <netpay><%= payroll.netPay %></netpay>
+        <status><%= payroll.status %></status>
+        <id><%= payroll.employee_id %></id>
+        <code><%= payroll.department.departmentCode %></code>
+        <type><%= payroll.employee_type.typeCode %></type> 
+        <show><%= link_to 'Show', payroll %></show>
+        <edit><%= link_to 'Edit', edit_payroll_path(payroll) %></edit>
+        <destory>
+        	<%= link_to 'Destroy', payroll, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </destory>  
+    <% end %>
+  <new><%= link_to 'New Payroll', new_payroll_path %></new>
+</payrolls>

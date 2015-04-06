@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xsl/employees.xsl"?>
+<employees>
+    <logo src="/assets/images/bentTech.png"/>
+	<% @employees.each do |employee| %>
+        <id><%= employee.employeeID %></id>
+        <name>
+         <first><%= employee.FirstName %></first>
+         <last><%= employee.LastName %></last>
+        </name>
+        <address><%= employee.Address %></address>
+        <phone><%= employee.Phone %></phone>
+        <email><%= employee.Email %></email>
+        <qualifications><%= employee.Qualifications %></qualifications>
+        <details><%= employee.details %></details>
+
+        <show><%= link_to 'Show', employee %></show>
+        <edit><%= link_to 'Edit', edit_employee_path(employee) %></edit>
+        <destory>
+            <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?'  } %>
+        </destory>         
+    <% end %>
+    <new><%= link_to 'New Employee', new_employee_path %></new>
+</employees>
